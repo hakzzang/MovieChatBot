@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?><!-- data Item layout 부분에 dataModel을 셋팅해줘서 연결해야 됨-->
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movieViewModel"
+            type="hbs.com.freetoeicapp.ViewModel.MovieViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/itemCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/backgroundCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/searchCV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/real_white"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:id="@+id/searchLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:paddingStart="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:ellipsize="marquee"
+                            android:gravity="bottom"
+                            android:singleLine="true"
+                            android:text="@{movieViewModel.movieData.title}"
+                            android:textColor="@color/grey_900"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:ellipsize="marquee"
+                            android:gravity="top"
+                            android:singleLine="true"
+                            android:text="@{movieViewModel.movieData.original_title}"
+                            android:textColor="@color/grey_500"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:drawableLeft="@drawable/ic_star_yellow_24dp"
+                                android:text="@{String.valueOf(movieViewModel.movieData.vote_average)}" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical">
+                            <!-- 인기도 -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:drawableLeft="@drawable/ic_favorite_heart_button"
+                                android:text="@{String.valueOf(movieViewModel.movieData.popularity)}" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/itemCardImage"
+            android:layout_width="96dp"
+            android:layout_height="107dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="2"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/movieFrontIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

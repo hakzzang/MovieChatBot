@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?><!-- data Item layout 부분에 dataModel을 셋팅해줘서 연결해야 됨-->
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.icu.text.DecimalFormat" />
+
+        <variable
+            name="officeViewModel"
+            type="hbs.com.freetoeicapp.ViewModel.BoxOfficeViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainCL">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/officeParentLL">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@{officeViewModel.officeData.rank}"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/movieImageView"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_weight="7"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:ellipsize="marquee"
+                                android:gravity="center_vertical"
+                                android:singleLine="true"
+                                android:text="@{officeViewModel.officeData.movieNm}"
+                                android:textColor="@color/orange_300"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="@{officeViewModel.officeData.openDt}"
+                                android:textColor="@color/grey_500"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_person_outline_black_24dp" />
+
+                                <TextView
+                                    android:id="@+id/audiAccTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/grey_400"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_increase" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text='@{officeViewModel.officeData.audiChange+"%"}'
+                                    android:textColor="@color/grey_400"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/orange_300"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:foreground="@drawable/ic_video_library_black_24dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_height="1dp"
+                android:background="@color/orange_300"
+                android:layout_width="match_parent" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="196dp"
+                android:id="@+id/officeExpandedYoutubeLL"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/movieReviewRV"
+                    android:visibility="gone"
+                    />
+            </android.support.constraint.ConstraintLayout>
+
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

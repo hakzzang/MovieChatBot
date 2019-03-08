@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "115558161664",
+    "firebase_url": "https://freetoeicapp.firebaseio.com",
+    "project_id": "freetoeicapp",
+    "storage_bucket": "freetoeicapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115558161664:android:bd4b7c6bafbbe11c",
+        "android_client_info": {
+          "package_name": "hbs.com.freetoeicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115558161664-uclu1rdma1r7o90vj6fgo8mh9r97h8d8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hbs.com.freetoeicapp",
+            "certificate_hash": "5724b840d48ce6ddf8c58aac8ac1b023c2c082da"
+          }
+        },
+        {
+          "client_id": "115558161664-43oeehj36dsetuknhdftnvgj5ma8jp84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPXepv05K5OqmQ4vlRqhNXciDqkMHdM4U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115558161664-43oeehj36dsetuknhdftnvgj5ma8jp84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

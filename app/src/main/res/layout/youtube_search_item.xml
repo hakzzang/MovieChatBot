@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="searchYoutubeVM"
+            type="hbs.com.freetoeicapp.ViewModel.SearchYoutubeViewModel" />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:orientation="vertical"
+        android:id="@+id/youtube_Item_LL">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/youtubeThumbIV"
+                    android:scaleType="fitXY"
+                    android:layout_margin="4dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="5"
+                    android:gravity="center_vertical"
+                    android:text="@{searchYoutubeVM.searchYoutube.snippet.title}"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/grey_500"
+                    android:text="@{searchYoutubeVM.searchYoutube.snippet.channelTitle}"/>
+                <!--<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/grey_500"
+                    android:id="@+id/youtubeDateTV"/>
+                    publishedAt 데이터가 좋지 않음.
+                    -->
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_height="1dp"
+            android:background="@color/orange_300"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+
+</layout>
